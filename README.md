@@ -89,4 +89,26 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 - **Objective: WSL2 enabled and used.**
 - *Comments:* For WSL2, we downloaded together in class called 'Docker Desktop'.
-- *Comments:* To show the 
+
+---
+- **Objective: Windows Terminal installed.**
+- *Comments:* For Windows User, the Windows Terminal has already been installed, and all you can do is just, search it on 'Search'.
+
+---
+- **Objective: Docker Desktop installed and running.**
+- *Comments:* To run the Docker Desktop, go to settings, and go to 'Resources' and 'WSL Integration' to check both Ubuntu has been enabled by applying 'Apply & restart'.
+- *Comments:* If already did, then can start the containers by clicking it at the 'action'.
+
+---
+- **Objective: Laravel installed in a folder named studentid-as2. E.g. 22ftt1234-as2**
+- *Comments:* To have Laravel installed, first check that you're in Linux/home/username with the command, 'pwd'.
+- *Comments:* To create a folder, command it with 'mkdir project-name' and with this, we created it with the name 'mkdir 22ftt1497-as2'.
+- *Comments:* Then enter the project by the command, 'cd 22ftt1497-as2'.
+
+---
+- **Objective: Laravel website running locally in user browser.**
+- *Comments:* After that, we did install it with [curl -s https://laravel.build/example-app | bash].
+- *Comments:* On how to do it can be found on Laravel Documentation [Sail on Windows][https://laravel.com/docs/10.x#sail-on-windows].
+- *Comments:* Wait for it to install, then command it with 'cd example-app && ./vendor/bin/sail up'.
+- *Comments:* To check Laravel Website, type in 'localhost' on your FireFox or wherever it is, and then you'll find that there's the website.
+- *Comments:* To alter the contents inside, just type in 'code .' to open the coding.
