@@ -66,3 +66,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
 
 # WD4307 WADT AS2 Assignment 2
+
+## Table of Contents
+- [Week 8](#week-8)
+  - [Day 1: March 12, 2024](#day-1-march-12-2024)
+  - [Day 2: January 4, 2024](#day-2-january-4-2024) //not yet
+
+## Week 8
+
+### Day 1: March 12, 2024
+- **Objective: WSL Installed and enabled.**
+- *Comments:* To check WSL installed or not, I do it with the command, 'wsl --list'.
+- *Comments:* To check if it's running in the background or not? Do it with the command, 'wsl --list --verbose'.
+- *Comments:* If WSL hasn't been install yet, then do it with the command, 'wsl --install'.
+- *Comments:* Once it has been installed, then you can download Ubuntu 22.04 at Microsoft Store.
+
+---
+
+- *Comments:* As mine has been downloaded during class, I just need to check it with the command, 'wsl --list --verbose' to see if its running or not.
+
+---
+
+- **Objective: WSL2 enabled and used.**
+- *Comments:* For WSL2, we downloaded together in class called 'Docker Desktop'.
+- *Comments:* To show the 
