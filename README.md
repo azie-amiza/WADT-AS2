@@ -107,8 +107,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ---
 - **Objective: Laravel website running locally in user browser.**
-- *Comments:* After that, we did install it with [curl -s https://laravel.build/example-app | bash].
-- *Comments:* On how to do it can be found on Laravel Documentation [Sail on Windows][https://laravel.com/docs/10.x#sail-on-windows].
+- *Comments:* After that, we did install it with [Installing Laravel](curl -s https://laravel.build/example-app | bash).
+- *Comments:* On how to do it can be found on Laravel Documentation [Sail on Windows](https://laravel.com/docs/10.x#sail-on-windows).
 - *Comments:* Wait for it to install, then command it with 'cd example-app && ./vendor/bin/sail up'.
 - *Comments:* To check Laravel Website, type in 'localhost' on your FireFox or wherever it is, and then you'll find that there's the website.
 - *Comments:* To alter the contents inside, just type in 'code .' to open the coding.
