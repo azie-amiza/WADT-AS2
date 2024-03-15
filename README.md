@@ -68,9 +68,16 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # WD4307 WADT AS2 Assignment 2
 
 ## Table of Contents
+1. [Part #1: Laravel Project Deployment Checklist]
 - [Week 8](#week-8)
   - [Day 1: March 12, 2024](#day-1-march-12-2024)
-  - [Day 2: January 4, 2024](#day-2-january-4-2024) //not yet
+  - [Day 2: March 15, 2024](#day-2-march-15-2024)
+2. [Part #2: Git Enabled Laravel Project Checklist]
+- [Week 8](#week-8)
+  - [Day 1: March 15, 2024](#day-1-march-15-2024)
+
+---
+## Part #1: Laravel Project Deployment Checklist
 
 ## Week 8
 
@@ -114,5 +121,116 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - *Comments:* To alter the contents inside, just type in 'code .' to open the coding.
 
 ---
+
+### Day 2: March 15, 2024
+
+---
 - **Objective: Laravel website’s .env file contains APP_NAME with student’s ID. E.g. 19ftt1234**
-- *Comments:*
+- *Comments:* How to open the .env file is through the command, 'code .'.
+- *Comments:* From there, you can find the .env file and change the content acordingly according to being what being assigned.
+- *Comments:* Find APP_NAME='Laravel' changed it to APP_NAME='22FTT1497' (school id).
+- *Comments:* Making sure that APP_KEY has a valid value, and if it doesn't have value - we can generate it by:
+- *Comments:* With the command, 'php artisan key:generate' - it will generate a random number.
+- *Comments:* It should look like this 'APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' - as an example.
+
+---
+- **Objective: Laravel website landing page replaces default Laravel logo with student’s ID (e.g.19ftt1234) in h1 tag and white colour.**
+- *Comments:* Inside the folder resources/views, there's the welcome.blade.php file and from there we can alter the logo.
+- *Comments:* Find '<svg>' and commented that one to make '<h1 style="color: red;">19ftt1234</h1>'.
+- *Comments:* After that save it, then you can see on the localhost to see if it has been made.
+
+---
+- **Objective: Composer installed and available on command line.**
+- *Comments:* Open your command line, and then type in 'composer'.
+- *Comments:* And if it has been installed properly, there should be an output that shows the version, usage and options.
+- *Comments:* After confirming has composer, then we can create a new laravel projects with the command, 'composer create-project laravel/laravel my-project' - my-project can be changed to any name that you want.
+- *Comments:* To verify installation path, we can do 'where composer' and 'which composer', then it'll display the path to the composer executable file - by confirming its installation and availability.
+
+---
+- **Objective: Install a Laravel 3rd party package called spatie/laravel-backup.**
+- *Comments:* Finding your laravel project with the 'cd', command as usual.
+- *Comments:* Then, install it with the command, 'composer require spatie/laravel-backup'.
+- *Comments:* After that, once the installation has been done, open the 'composer.json' under the "require" section.
+- *Comments:* Then configure the package depends on the packages, as usual run the necessary commands.
+
+---
+- **Objective: Customise the package spatie/laravel-backup.**
+- *Comments:* First we publish the configuration file, with the command, 'php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"'.
+- *Comments:* Then we modify the configuration file by opening the 'config/backup.php' file in your laravel project.
+- *Comments:* To add prefix to compressed zip file name, need to customize the backup file name first using configuration file.
+- *Comments:* Look for 'backup.destination.filename_prefix' configuration option in the 'config/backup.php' file and set it to "as2-".
+
+- *Comments:* Examples:
+'destination' => [
+    'filename_prefix' => 'as2-',
+    // Other destination configurations...
+],
+
+- *Comments:* After customizing it, then we can run the backup command to generate the backup with the modified settings with 'php artisan backup:run', command.
+- *Comments:* To verify it's there, find the file in storage location, typically in 'storage/app/backup' directory.
+
+---
+- **Objective: Run on demand backup using laravel-backup’s php artisan command.**
+- *Comments:* It's almost the same thing as the point up but this time it's verifying.
+- *Comments:* First, we need it with the command, 'cd laravel-project'.
+- *Comments:* Then we run the backup command, 'php artisan backup:run'.
+- *Comments:* Verify that it's in the 'storage/app' folder. Then you can see that there's a new folder named 'backup' inside 'storage/app' directory containing the backup files.
+
+---
+- **Objective: Set spatie/laravel-backup to use password <studentid> to unlock zip file.**
+- *Comments:* To do this, we need to configure password protection first in 'config/backup.php' file to ensure the password protection is enabled.
+
+- *Comments:* Example:
+'encrypt' => [
+    'enabled' => true,
+    'passwords' => [
+        'password' => env('BACKUP_ENCRYPTION_PASSWORD', '22ftt1497'),
+        // Other passwords...
+    ],
+],
+
+- *Comments:* Then we run the backup command with, 'php artisan backup:run'.
+- *Comments:* We unzip the backup file by, using the student's id as password.
+- *Comments:* The comment goes, 'unzip backup-file.zip -P 19ftt1234'.
+- *Comments:* Replace the 'backup-file.zip' with the name of the encrypted backup file.
+- *Comments:* To verify extraction, we entered the password and the file is successfully extracted.
+
+---
+- **Objective: Laravel website uses database.**
+- *Comments:* We need to check first whether .env file has the correct database configuration.
+- *Comments:* It should include settings for DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, and DB_PASSWORD.
+
+- *Comments:* Example: depending on your own database.
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+
+- *Comments:* And to verify MySQL server is running, can check it with the command, 'sudo service mysql status'.
+- *Comments:* Then we connect to MySWL Database on command with the command, 'mysql -u your_database_username -p your_database_name'.
+- *Comments:* To test it, we can create simple route to fetch some database.
+
+- *Comments:* Example:
+Route::get('/test-database', function () {
+    $users = DB::table('users')->get();
+    return $users;
+});
+
+- **Objective: Laravel website has authentication scaffolding enabled.**
+- *Comments:* To install it, we need it with the command, 'composer require laravel/breeze --dev'.
+- *Comments:* Then we setup the authentication with 'php artisan breeze:install', command.
+- *Comments:* Before doing anything else, we migrate the database first with the command, 'php artisan migrate'.
+- *Comments:* Continue starting the development server with, 'php artisan serve' command.
+- *Comments:* We check it on the localhost to see if there's login and register.
+
+---
+## Part #2: Git Enabled Laravel Project Checklist
+
+### Day 1: March 15, 2024
+
+---
+- **Objective: Laravel website repo is git enabled**
+- *Comments:* 
