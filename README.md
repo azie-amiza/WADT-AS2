@@ -1,69 +1,3 @@
-<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
 
 # WD4307 WADT AS2 Assignment 2
 
@@ -75,6 +9,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 2. [Part #2: Git Enabled Laravel Project Checklist]
 - [Week 8](#week-8)
   - [Day 1: March 15, 2024](#day-1-march-15-2024)
+- [Week 8](#week-8)
+  - [Day 2: March 18, 2024](#day-2-march-18-2024)
 
 ---
 ## Part #1: Laravel Project Deployment Checklist
@@ -233,4 +169,55 @@ Route::get('/test-database', function () {
 
 ---
 - **Objective: Laravel website repo is git enabled**
-- *Comments:* 
+- *Comments:* First of all, we need to go to your folder which is "22ftt1497-as2" with the command, cd.
+- *Comments:* Then, to check if there's .git folder on it (hidden files), we search it with the command, 'dir /a'.
+- *Comments:* If there's the folder, then it has been successfully created.
+- *Comments:* But if not, then we do it with the command, 'git init' to intialize the folder.
+- *Comments:* And, you can also check the status of it by 'git status', command.
+
+---
+
+### Day 2: March 18, 2024
+
+- **Objective: Show commit in changing Laravel default logo with student’s ID.**
+- **Objective: For the step above, commit message is student’s ID, i.e. 19ftt1234.**
+- **Objective: Laravel website is pushed to student’s own personal repo on GitHub**
+
+- *Comments:* Always checking first before anything else, as usual with the command 'git status'.
+- *Comments:* How to add the all the files? We do it with the command, 'git add .'.
+- *Comments:* You can also add the files one by one, by replacing the it with the 'git add <name of the file>'.
+- *Comments:* Then we do it with the 'git commit -m "22ftt1497"', command.
+- *Comments:* To verify commit, we can do 'git log' to display all of your commits.
+- *Comments:* You can let it show changes as well with, 'git show' command.
+
+---
+
+- **Objective: GitHub repo is private**
+- *Comments:* Go to the settings of your github repository underneath Danger Zone, then change the visibility from 'public' to 'private'.
+
+---
+
+- **Objective: Make changes on remote by changing Laravel website landing page’s student’s ID to “AS2” and commit changes.**
+- *Comments:* It's the same method as from the points up, but the only changes is to change it from 'student ID's' to 'AS2'.
+
+---
+
+- **Objective: Demonstrate a git pull on latest changes on local machine.**
+- *Comments:* To pull from local machine, as usual check if you're in the folder and also, check the 'git status'.
+- *Comments:* Then we pull it with 'git pull origin master', command.
+- *Comments:* Depends on your branch, it can be 'main' or 'master'.
+- *Comments:* To verify it has been pulled, we check it again with 'git status'.
+
+---
+
+- **Objective: Make changes on local machine’s Laravel website landing page’s AS2 to “Done” and commit changes. And push changes to GitHub repo.**
+- *Comments:* It's the same thing, we do it with the command 'git commit -m "Replace AS2 with Done on landing page"'.
+- *Comments:* To push it again, we do 'git push origin master' or 'git push origin main'.
+
+---
+
+- **Objective: Revert changes back to the state of the website still showing student’s ID by using git command.**
+- *Comments:* To show the history of all has been done, we type in 'git log', command.
+- *Comments:* Then, we revert it with the command, 'git revert <commit_hash>'.
+- *Comments:* To commit the revert, we do it with, 'git commit -m "Revert changes back to student's ID"', command.
+- *Comments:* Lastly, we push it to the repository with the command, 'git push origin master' or 'git push origin main'.
