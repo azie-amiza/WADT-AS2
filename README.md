@@ -34,21 +34,25 @@
 - *Comments:* For WSL2, we downloaded together in class called 'Docker Desktop'.
 
 ---
+
 - **Objective: Windows Terminal installed.**
 - *Comments:* For Windows User, the Windows Terminal has already been installed, and all you can do is just, search it on 'Search'.
 
 ---
+
 - **Objective: Docker Desktop installed and running.**
 - *Comments:* To run the Docker Desktop, go to settings, and go to 'Resources' and 'WSL Integration' to check both Ubuntu has been enabled by applying 'Apply & restart'.
 - *Comments:* If already did, then can start the containers by clicking it at the 'action'.
 
 ---
+
 - **Objective: Laravel installed in a folder named studentid-as2. E.g. 22ftt1234-as2**
 - *Comments:* To have Laravel installed, first check that you're in Linux/home/username with the command, 'pwd'.
 - *Comments:* To create a folder, command it with 'mkdir project-name' and with this, we created it with the name 'mkdir 22ftt1497-as2'.
 - *Comments:* Then enter the project by the command, 'cd 22ftt1497-as2'.
 
 ---
+
 - **Objective: Laravel website running locally in user browser.**
 - *Comments:* After that, we did install it with [Installing Laravel][curl -s https://laravel.build/example-app | bash].
 - *Comments:* On how to do it can be found on Laravel Documentation [Sail on Windows](https://laravel.com/docs/10.x#sail-on-windows).
@@ -61,6 +65,7 @@
 ### Day 2: March 15, 2024
 
 ---
+
 - **Objective: Laravel website’s .env file contains APP_NAME with student’s ID. E.g. 19ftt1234**
 - *Comments:* How to open the .env file is through the command, 'code .'.
 - *Comments:* From there, you can find the .env file and change the content acordingly according to being what being assigned.
@@ -70,12 +75,14 @@
 - *Comments:* It should look like this 'APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' - as an example.
 
 ---
+
 - **Objective: Laravel website landing page replaces default Laravel logo with student’s ID (e.g.19ftt1234) in h1 tag and white colour.**
 - *Comments:* Inside the folder resources/views, there's the welcome.blade.php file and from there we can alter the logo.
 - *Comments:* Find '<svg>' and commented that one to make '<h1 style="color: red;">19ftt1234</h1>'.
 - *Comments:* After that save it, then you can see on the localhost to see if it has been made.
 
 ---
+
 - **Objective: Composer installed and available on command line.**
 - *Comments:* Open your command line, and then type in 'composer'.
 - *Comments:* And if it has been installed properly, there should be an output that shows the version, usage and options.
@@ -83,6 +90,7 @@
 - *Comments:* To verify installation path, we can do 'where composer' and 'which composer', then it'll display the path to the composer executable file - by confirming its installation and availability.
 
 ---
+
 - **Objective: Install a Laravel 3rd party package called spatie/laravel-backup.**
 - *Comments:* Finding your laravel project with the 'cd', command as usual.
 - *Comments:* Then, install it with the command, 'composer require spatie/laravel-backup'.
@@ -90,6 +98,7 @@
 - *Comments:* Then configure the package depends on the packages, as usual run the necessary commands.
 
 ---
+
 - **Objective: Customise the package spatie/laravel-backup.**
 - *Comments:* First we publish the configuration file, with the command, 'php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"'.
 - *Comments:* Then we modify the configuration file by opening the 'config/backup.php' file in your laravel project.
@@ -106,6 +115,7 @@
 - *Comments:* To verify it's there, find the file in storage location, typically in 'storage/app/backup' directory.
 
 ---
+
 - **Objective: Run on demand backup using laravel-backup’s php artisan command.**
 - *Comments:* It's almost the same thing as the point up but this time it's verifying.
 - *Comments:* First, we need it with the command, 'cd laravel-project'.
@@ -113,6 +123,7 @@
 - *Comments:* Verify that it's in the 'storage/app' folder. Then you can see that there's a new folder named 'backup' inside 'storage/app' directory containing the backup files.
 
 ---
+
 - **Objective: Set spatie/laravel-backup to use password <studentid> to unlock zip file.**
 - *Comments:* To do this, we need to configure password protection first in 'config/backup.php' file to ensure the password protection is enabled.
 
@@ -127,11 +138,12 @@
 
 - *Comments:* Then we run the backup command with, 'php artisan backup:run'.
 - *Comments:* We unzip the backup file by, using the student's id as password.
-- *Comments:* The comment goes, 'unzip backup-file.zip -P 19ftt1234'.
+- *Comments:* The comment goes, 'unzip backup-file.zip -P 22ftt1497'.
 - *Comments:* Replace the 'backup-file.zip' with the name of the encrypted backup file.
 - *Comments:* To verify extraction, we entered the password and the file is successfully extracted.
 
 ---
+
 - **Objective: Laravel website uses database.**
 - *Comments:* We need to check first whether .env file has the correct database configuration.
 - *Comments:* It should include settings for DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, and DB_PASSWORD.
@@ -163,11 +175,13 @@ Route::get('/test-database', function () {
 - *Comments:* We check it on the localhost to see if there's login and register.
 
 ---
+
 ## Part #2: Git Enabled Laravel Project Checklist
+
+---
 
 ### Day 1: March 15, 2024
 
----
 - **Objective: Laravel website repo is git enabled**
 - *Comments:* First of all, we need to go to your folder which is "22ftt1497-as2" with the command, cd.
 - *Comments:* Then, to check if there's .git folder on it (hidden files), we search it with the command, 'dir /a'.
@@ -221,3 +235,45 @@ Route::get('/test-database', function () {
 - *Comments:* Then, we revert it with the command, 'git revert <commit_hash>'.
 - *Comments:* To commit the revert, we do it with, 'git commit -m "Revert changes back to student's ID"', command.
 - *Comments:* Lastly, we push it to the repository with the command, 'git push origin master' or 'git push origin main'.
+
+---
+
+**Notes: There's a little bit difference from what i'm doing regarding pushing it to GitHub**
+
+- *Comments:* Basically, we need to make SSH-Keygen to push the Laravel code to Github
+- *Comments:* How to do this?
+
+1. cd <name of the folder>
+2. git init
+3. git add .
+4. git commit -m "message"
+5. git remote add origin [url of the repository]
+6. git remote -v (to check whether it has the repository or not)
+7. git branch (to find out what branch it is on)
+
+*went out of the folder and then create the key*
+
+8. ssh-keygen -t ed25519 (to generate the public key and private key)
+9. cat .ssh/ (to find what are the name is)
+10. cat .ssh/id_ed25519.pub (for it to show the public key)
+11. nano .ssh/id_ed25519 (to change the name of the public key inside to azieamiza@Ubuntu22.04WSL)
+
+*enter the folder again through cd <folder name>*
+
+12. git push -u origin main (to push it to GitHub)
+
+- *Comments:* This is what we have to do on GitHub
+- *Comments:* How to do it?
+
+1. We find on the github repository that we want to place by on 'settings'.
+2. From there, we can find 'SSH and GPG keys' and through there we can add the public keys that has been made.
+3. By clicking 'New SSH Key', then we add the title to 'ed25519 on WSL2 Ubuntu 22.04.3 LTS'.
+4. We paste the public key to the box provided.
+5. After that, there will be verification that shows that it has been made.
+
+*continuing pushing the Laravel Code to GitHub*
+
+1. cd <folder name>
+2. git push -u origin main
+
+*There you go, it has been pushed to GitHub.*
