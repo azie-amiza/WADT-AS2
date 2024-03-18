@@ -78,7 +78,7 @@
 
 - **Objective: Laravel website landing page replaces default Laravel logo with student’s ID (e.g.19ftt1234) in h1 tag and white colour.**
 - *Comments:* Inside the folder resources/views, there's the welcome.blade.php file and from there we can alter the logo.
-- *Comments:* Find '<svg>' and commented that one to make '<h1 style="color: red;">19ftt1234</h1>'.
+- *Comments:* Find 'svg' and commented that one to make [<h1 style="color: red;">22FTT1497</h1>].
 - *Comments:* After that save it, then you can see on the localhost to see if it has been made.
 
 ---
