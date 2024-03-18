@@ -54,8 +54,8 @@
 ---
 
 - **Objective: Laravel website running locally in user browser.**
-- *Comments:* After that, we did install it with [Installing Laravel][curl -s https://laravel.build/example-app | bash].
-- *Comments:* On how to do it can be found on Laravel Documentation [Sail on Windows](https://laravel.com/docs/10.x#sail-on-windows).
+- *Comments:* After that, we did install it with `[Installing Laravel][curl -s https://laravel.build/example-app | bash]`.
+- *Comments:* On how to do it can be found on Laravel Documentation `[Sail on Windows](https://laravel.com/docs/10.x#sail-on-windows)`.
 - *Comments:* Wait for it to install, then command it with 'cd example-app && ./vendor/bin/sail up'.
 - *Comments:* To check Laravel Website, type in 'localhost' on your FireFox or wherever it is, and then you'll find that there's the website.
 - *Comments:* To alter the contents inside, just type in 'code .' to open the coding.
@@ -78,7 +78,10 @@
 
 - **Objective: Laravel website landing page replaces default Laravel logo with student’s ID (e.g.19ftt1234) in h1 tag and white colour.**
 - *Comments:* Inside the folder resources/views, there's the welcome.blade.php file and from there we can alter the logo.
-- *Comments:* Find 'svg' and commented that one to make [<h1 style="color: red;">22FTT1497</h1>].
+- *Comments:* Find 'svg' and commented that one to make
+
+`<h1 style="color: red;">22FTT1497</h1>`.
+
 - *Comments:* After that save it, then you can see on the localhost to see if it has been made.
 
 ---
@@ -124,10 +127,11 @@
 
 ---
 
-- **Objective: Set spatie/laravel-backup to use password <studentid> to unlock zip file.**
+- **Objective: Set spatie/laravel-backup to use password `<studentid>` to unlock zip file.**
 - *Comments:* To do this, we need to configure password protection first in 'config/backup.php' file to ensure the password protection is enabled.
 
 - *Comments:* Example:
+
 'encrypt' => [
     'enabled' => true,
     'passwords' => [
@@ -199,7 +203,7 @@ Route::get('/test-database', function () {
 
 - *Comments:* Always checking first before anything else, as usual with the command 'git status'.
 - *Comments:* How to add the all the files? We do it with the command, 'git add .'.
-- *Comments:* You can also add the files one by one, by replacing the it with the 'git add <name of the file>'.
+- *Comments:* You can also add the files one by one, by replacing the it with the 'git add `<name of the file>`'.
 - *Comments:* Then we do it with the 'git commit -m "22ftt1497"', command.
 - *Comments:* To verify commit, we can do 'git log' to display all of your commits.
 - *Comments:* You can let it show changes as well with, 'git show' command.
@@ -232,7 +236,7 @@ Route::get('/test-database', function () {
 
 - **Objective: Revert changes back to the state of the website still showing student’s ID by using git command.**
 - *Comments:* To show the history of all has been done, we type in 'git log', command.
-- *Comments:* Then, we revert it with the command, 'git revert <commit_hash>'.
+- *Comments:* Then, we revert it with the command, 'git revert `<commit_hash>`'.
 - *Comments:* To commit the revert, we do it with, 'git commit -m "Revert changes back to student's ID"', command.
 - *Comments:* Lastly, we push it to the repository with the command, 'git push origin master' or 'git push origin main'.
 
@@ -243,7 +247,7 @@ Route::get('/test-database', function () {
 - *Comments:* Basically, we need to make SSH-Keygen to push the Laravel code to Github
 - *Comments:* How to do this?
 
-1. cd <name of the folder>
+1. cd `<name of the folder>`
 2. git init
 3. git add .
 4. git commit -m "message"
@@ -258,7 +262,7 @@ Route::get('/test-database', function () {
 10. cat .ssh/id_ed25519.pub (for it to show the public key)
 11. nano .ssh/id_ed25519 (to change the name of the public key inside to azieamiza@Ubuntu22.04WSL)
 
-*enter the folder again through cd <folder name>*
+*enter the folder again through cd `<folder name>`*
 
 12. git push -u origin main (to push it to GitHub)
 
@@ -273,7 +277,7 @@ Route::get('/test-database', function () {
 
 *continuing pushing the Laravel Code to GitHub*
 
-1. cd <folder name>
+1. cd `<folder name>`
 2. git push -u origin main
 
 *There you go, it has been pushed to GitHub.*
